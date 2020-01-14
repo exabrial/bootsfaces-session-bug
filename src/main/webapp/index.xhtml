@@ -31,6 +31,7 @@
 			<b:navbarLinks
 				id="leftNavbarLinks"
 				pull="left">
+				<b:navLink value="Hello!" />
 			</b:navbarLinks>
 		</b:navBar>
 		<b:container fluid="true">
@@ -46,7 +47,10 @@
 										<div class="container">
 											<p>This page should not create a session</p>
 											<p>
-												<span>But does it though?:</span> <span><h:outputText value="#{externalContext.request.getSession(false) eq null}" /></span>
+												<span>But does it though?:</span> <span><h:outputText value="#{indexPage.session != null}" /></span>
+											</p>
+											<p>
+												<h:outputText value="#{indexPage.session}" />
 											</p>
 										</div>
 									</b:jumbotron>

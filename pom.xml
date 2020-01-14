@@ -23,6 +23,12 @@
 			<version>2.7.1</version>
 			<scope>compile</scope>
 		</dependency>
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>7.0</version>
+			<scope>provided</scope>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
@@ -43,6 +49,14 @@
 				<artifactId>tomee-maven-plugin</artifactId>
 				<version>7.0.6</version>
 				<configuration>
+					<libs>
+						<lib>remove:tomee-mojarra</lib>
+						<lib>remove:javax.faces</lib>
+						<lib>remove:myfaces-api</lib>
+						<lib>remove:myfaces-impl</lib>
+						<lib>org.apache.myfaces.core:myfaces-api:2.3.6</lib>
+						<lib>org.apache.myfaces.core:myfaces-impl:2.3.6</lib>
+					</libs>
 					<context>${project.artifactId}</context>
 					<tomeeClassifier>plus</tomeeClassifier>
 					<tomeeVersion>7.0.6</tomeeVersion>
